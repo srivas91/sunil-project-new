@@ -5,7 +5,7 @@ import java.sql.*;
 class UserList extends JFrame {
     DefaultTableModel model = new DefaultTableModel();
     Container cnt = this.getContentPane();
-//    JTable jtbl = nee(model);
+    JTable jtbl = new JTable(model);
     public UserList() {
          setTitle("Swing Example");
         setSize(500, 300);
@@ -28,7 +28,7 @@ class UserList extends JFrame {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-//        JScrollPane pg = new JScrollPane(jtbl);
+        JScrollPane pg = new JScrollPane(jtbl);
         cnt.add(pg);
         this.pack();
     }

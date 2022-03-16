@@ -1,6 +1,6 @@
 import java.sql.*;
 
-public class DataInsertion {
+public class DataDeletion {
     public static void main(String[] args) throws Exception{
             
         //Step-1: Loading Driver Class
@@ -13,17 +13,16 @@ public class DataInsertion {
           Connection con=DriverManager.getConnection(URL,USER,PASS);
           
           //Step-3: Create Statement for execute SQL Query
-          PreparedStatement ps=con.prepareStatement("insert into workshop(id,name)values(?,?)");
-          ps.setInt(1, 106);
-          ps.setString(2,"vishal");
-         int  result=ps.executeUpdate();
+          PreparedStatement ps=con.prepareStatement("delete from carsales where num=?");
+          ps.setInt(1, 2);
+          int result=ps.executeUpdate();
           if(result>0)
           {
-              System.out.println("data inserted successfully");
+              System.out.println("data deleted successfully");
           }
           else
           {
-              System.out.println("insertion failed");
+              System.out.println("deletion failed");
           }
           
           
